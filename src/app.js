@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const userRouter = require("./router/user");
 const userInfoRouter = require("./router/userInfo");
+const articleRouter = require("./router/article");
 
 const joi = require("@hapi/joi");
 
@@ -30,6 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api", userRouter);
 app.use("/user", userInfoRouter);
+app.use("/article", articleRouter);
 
 // 错误中间件
 app.use((err, req, res, next) => {
